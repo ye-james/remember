@@ -20,6 +20,16 @@
 
 .btn {
     border-radius: 10px;
+    transition: transform 300ms ease;
+    
+    
+
+
+    &:hover {
+        -webkit-backface-visibility: hidden;
+        -webkit-transform: translateZ(0) scale(1.05);
+
+    }
 }
 
 .todo-delete {
