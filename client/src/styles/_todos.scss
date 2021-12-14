@@ -1,0 +1,28 @@
+.todo-container {
+    width: 90%;
+}
+
+
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.todo-item {
+    border: 1px solid #000;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn {
+    border-radius: 10px;
+}
+
+.todo-delete {
+    margin-left: .25rem;
+    background-color: #FF4C4C;
+}

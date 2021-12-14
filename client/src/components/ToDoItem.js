@@ -1,10 +1,16 @@
-import React from 'react'
+import React from 'react';
+import '../styles/_todos.scss';
 
-const ToDoItem = () => {
+const ToDoItem = (props) => {
     return (
-        <div>
-            
-        </div>
+        <li className='todo-item'>
+            <p className="todo-description">{props.todo}</p>
+            <span className='todo-controls'>
+                <button className='btn todo-edit'>Edit</button>
+                <button className='btn todo-delete'>Delete</button>
+            </span>
+
+        </li>
     )
 }
 

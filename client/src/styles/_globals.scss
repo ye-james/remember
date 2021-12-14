@@ -37,3 +37,15 @@ li {
     margin: 0;
     list-style: none;
 }
+
+button {
+    display: inline-block;
+    border: none;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-family: inherit;
+    cursor: pointer;
+    background: $color-blue-primary-light;
+    padding: .5rem 1rem;
+}
