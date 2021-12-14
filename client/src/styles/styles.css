@@ -16,6 +16,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
 }
 
 h1,
@@ -54,8 +55,8 @@ button {
 .App {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: minmax(150px, 200px) 2fr;
-      grid-template-columns: minmax(150px, 200px) 2fr;
+  -ms-grid-columns: minmax(150px, 275px) 2fr;
+      grid-template-columns: minmax(150px, 275px) 2fr;
 }
 
 .sidebar {

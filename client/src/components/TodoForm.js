@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import '../styles/_todos.scss';
 
 const TodoForm = (props) => {
 

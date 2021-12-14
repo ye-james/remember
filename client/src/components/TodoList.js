@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ToDoItem from './ToDoItem';
 
 import '../styles/_todos.scss';
+import TodoForm from './TodoForm';
 
 
 
@@ -60,14 +61,15 @@ const TodoList = () => {
     
     return (
         <div className="todo-container">
+            <h2>Tasks</h2>
             <ul className='todo-list'>
                 {todos[0].map((todo, index) => {
                     return (
-                        <ToDoItem key={index} todo={todo.todo}/>
+                        <ToDoItem key={index} todo={todo.todo} category={todo.category}/>
                     )
                 })}
             </ul>
-
+            <TodoForm/>
         </div>
     )
 }

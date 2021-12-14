@@ -1,3 +1,9 @@
 @mixin text-shadow($x, $y, $blur, $color) {
     text-shadow: $x $y $blur $color;
 }
+
+@mixin box-shadow($top, $left, $blur, $size, $color) {
+    -webkit-box-shadow: $top $left $blur $size $color;
+    -moz-box-shadow: $top $left $blur $size $color;
+    box-shadow: $top $left $blur $size $color;
+}

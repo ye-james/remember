@@ -1,34 +1,71 @@
+@import 'mixins';
+@import 'variables';
+
 .todo-container {
-    width: 90%;
+    width: 100%;
 }
 
 
 .todo-list {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-flow: column wrap;
 }
 
 
+
 .todo-item {
-    border: 1px solid #000;
+    border-bottom: 1px solid #000;
     padding: 1.5rem;
-    display: flex;
-    justify-content: space-between;
+
+
+    display: grid;
+    row-gap: .75rem;
+    grid-template-columns: 2.5rem repeat(7, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     align-items: center;
+
+    &:last-child {
+        margin-bottom: 2rem;
+    }
+
+}
+
+.todo-done {
+    grid-row: 1 / -1;
+}
+
+.todo-description {
+    grid-column: 2 / 7;
+}
+
+
+.todo-controls {
+    grid-row: 1 / -1;
+    grid-column: 8 / -1;
+}
+
+.todo-category {
+    grid-area: 2 / 2;
+    font-size: .8rem;
+    border-radius: 5px;
+    justify-self: start;
+    padding: .25rem .5rem;
+    cursor: pointer;
+    background: $color-grey-secondary-light;
+}
+
+
+.todo-input {
+    width: 25%;
 }
 
 .btn {
     border-radius: 10px;
-    transition: transform 300ms ease;
-    
-    
 
 
     &:hover {
-        -webkit-backface-visibility: hidden;
-        -webkit-transform: translateZ(0) scale(1.05);
-
+        transform: scale(1.05);
+        backface-visibility: hidden;
     }
 }
 
