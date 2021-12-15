@@ -1,71 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { TodoContext } from '../context/TodoContext'
 import ToDoItem from './ToDoItem';
-
-import '../styles/_todos.scss';
 import TodoForm from './TodoForm';
 
-
-
-const data = {
-    "data": [
-        {
-            "todo": "Pick up milk",
-            "done": false,
-            "category": "Errabds",
-            "priority": "high"
-        },
-        {
-            "todo": "Finish Project",
-            "done": false,
-            "category": "Important",
-            "priority": "high"
-        },
-        {
-            "todo": "Watch Demon Slayer",
-            "done": false,
-            "category": "Entertainment",
-            "priority": "low"
-        },
-        {
-            "todo": "Play Valorant",
-            "done": false,
-            "category": "Entertainment",
-            "priority": "low"
-        },
-        {
-            "todo": "Walk the dog",
-            "done": false,
-            "category": "Errands",
-            "priority": "medium"
-        },
-        {
-            "todo": "Buy ASOT tickets",
-            "done": false,
-            "category": "Entertainment",
-            "priority": "medium"
-        },
-        {
-            "todo": "Do Nothing",
-            "done": false,
-            "category": "Entertainment",
-            "priority": "low"
-        },
-    ]
-}
-
+import '../styles/_todos.scss';
 
 const TodoList = () => {
 
-    const [todos, setTodos] = useState([data.data]);
-    console.log(todos)
+    const { todos } = useContext(TodoContext);
+
     
     return (
         <div className="todo-container">
             <h2>Tasks</h2>
             <ul className='todo-list'>
-                {todos[0].map((todo, index) => {
+                {todos.map((todo, index) => {
                     return (
-                        <ToDoItem key={index} todo={todo.todo} category={todo.category}/>
+                        <ToDoItem key={index} id={todo.id} todo={todo.todo} category={todo.category}/>
                     )
                 })}
             </ul>
