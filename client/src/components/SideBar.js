@@ -11,6 +11,7 @@ const SideBar = () => {
                     <li className="nav__item">Home</li>
                     <li className="nav__item">Important</li>
                     <li className="nav__item">Tasks</li>
+                    <li className="nav__item">Completed Tasks</li>
                 </ul>
             </div>
         </div>

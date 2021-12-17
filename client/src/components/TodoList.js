@@ -1,13 +1,14 @@
 import React, { useState, useContext } from 'react';
 import { TodoContext } from '../context/TodoContext'
 import ToDoItem from './ToDoItem';
-import TodoForm from './TodoForm';
+import TodoFormModal from './TodoFormModal';
 
 import '../styles/_todos.scss';
 
 const TodoList = () => {
 
     const { todos } = useContext(TodoContext);
+    const [open, setOpen] = useState(false);
 
     
     return (
@@ -20,7 +21,8 @@ const TodoList = () => {
                     )
                 })}
             </ul>
-            <TodoForm/>
+            <button onClick={() => setOpen(true)}>Add Item</button>
+            <TodoFormModal open={open} onClose={()=> setOpen(false)} />
         </div>
     )
 }
