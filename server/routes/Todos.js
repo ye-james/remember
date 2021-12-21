@@ -5,8 +5,9 @@ const router = express.Router();
 
 const TodosController = require('../controllers/Todos');
 
-router.get('/', TodosController.getHomeToDos);
+router.get('/', TodosController.getAllTodos);
 router.post('/', TodosController.addTodo);
+router.delete('/', TodosController.deleteTodo);
 
 
 module.exports = router;

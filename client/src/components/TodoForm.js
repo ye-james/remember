@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import '../styles/_todos.scss';
+import { TodoContext } from '../context/TodoContext';
 
 
 const TodoForm = () => {
@@ -9,14 +10,24 @@ const TodoForm = () => {
     const [category, setCategory] = useState(false);
     const [priority, setPriority] = useState('Low');
 
+    const { addTodo } = useContext(TodoContext);
 
-    console.log(priority);
-    const handleFormSubmit = () => {
 
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+
+        const newTodo = {
+            todo,
+            done,
+            category,
+            priority
+        }
+
+        addTodo(newTodo);
     }
     
     return (
-        <form className="todo-form">
+        <form className="todo-form" onSubmit={handleFormSubmit}>
             <label className='todo-form__name: '>Name your to do item:
                 <input type="text" name="name" placeholder="ex: Walk the dog..." onChange={e => setTodo(e.target.value)}  required/>
             </label>
